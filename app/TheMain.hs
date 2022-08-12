@@ -3,30 +3,14 @@
 -- Module      :   a test  
 ----------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings     #-}
--- {-# LANGUAGE BangPatterns          #-}
--- {-# LANGUAGE DoAndIfThenElse       #-}
--- {-# LANGUAGE FlexibleContexts      #-}
--- {-# LANGUAGE FlexibleInstances     #-}
--- {-# LANGUAGE MultiParamTypeClasses #-}
--- {-# LANGUAGE PackageImports        #-}
--- {-# LANGUAGE ScopedTypeVariables   #-}
--- {-# LANGUAGE TypeFamilies          #-}
--- {-# LANGUAGE TypeSynonymInstances  #-}
--- {-# LANGUAGE UndecidableInstances  #-}
--- {-# LANGUAGE DeriveAnyClass  #-}
--- {-# LANGUAGE DeriveGeneric  #-}
--- {-# LANGUAGE GeneralisedNewtypeDeriving  #-}
+
 {-# LANGUAGE TypeOperators  #-}
 {-# LANGUAGE DataKinds  #-}
 
 {-# OPTIONS_GHC -Wno-missing-signatures #-}
 
-module Main     where      -- must have Main (main) or Main where
+module Main     where      
 
- 
--- import           Lib.DirTree
--- import           Lib.OpenClass
--- import UniformBase
 
 import Data.Geometry.Point 
 import qualified Data.Geometry.Point as HP
@@ -37,7 +21,6 @@ import Algorithms.Geometry.DelaunayTriangulation.Types
 import Algorithms.Geometry.DelaunayTriangulation.Naive
 import Data.Ext
 
--- preparing: 
 fourPts = [(0,0,11), (1.5, 1.5, 12), (0,2,13), (2,0,14)] :: [(Double,Double,Int)]
 to_HPoint  (x,y,i) = HP.Point2 x y :+ i
 
@@ -59,7 +42,7 @@ main =  do
     print "the input points"
     print . show $ fourHPoint
     let 
-        del1 = delaunay2 fourHPoint 
+        del1 = delaunayTriangulation (NE.fromList fourHPoint) 
         planar1 = toPlanarSubdivision del1
         plane1 = toPlaneGraph del1
     print . show $ del1

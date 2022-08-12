@@ -5,28 +5,14 @@ description:
     version 0.0.1 - a example minimal project
 dependencies:
   - base == 4.*
-  # - uniformBase
   - hgeometry
   - hgeometry-combinatorial
 
 ghc-options: -Wall
 
-# library:
-#   source-dirs: src
-
 executables:
   Run_Example:
     main: TheMain.hs
     source-dirs: app
-    # dependencies: Example3
 
-# tests:
-#   test1:
-#     main: Testing.hs
-#     source-dirs: tests
-#     dependencies: 
-#       - Example3
-#       - HTF
-# #      - QuickCheck 
-# #      - test-framework 
 
