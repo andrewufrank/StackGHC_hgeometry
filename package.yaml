@@ -6,6 +6,8 @@ description:
 dependencies:
   - base == 4.*
   # - uniformBase
+  - hgeometry
+  - hgeometry-combinatorial
 
 ghc-options: -Wall
 

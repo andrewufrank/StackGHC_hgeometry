@@ -20,4 +20,6 @@ executable Run_Example
   ghc-options: -Wall
   build-depends:
       base ==4.*
+    , hgeometry
+    , hgeometry-combinatorial
   default-language: Haskell2010
